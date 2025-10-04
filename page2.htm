@@ -1,549 +1,568 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>I Love You Forever 💘</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/icons/i-love-you-svg.svg"
+    />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins&display=swap" rel="stylesheet">
+    <title>I Love You Forever 💘</title>
 
-  <style>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
 
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      overflow: hidden;
-      font-family: 'Poppins', sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
-      position: relative;
-      color: white;
-    }
-
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-
-    h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 4rem;
-      text-align: center;
-      text-shadow: 3px 3px 10px rgba(255, 0, 102, 0.7);
-      z-index: 2;
-    }
-
-    p {
-      font-size: 1.8rem;
-      text-align: center;
-      margin-top: 10px;
-      z-index: 2;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
-    }
-
-    .heart {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: red;
-      transform: rotate(45deg);
-      animation: float 6s infinite ease-in-out;
-      opacity: 0.8;
-      z-index: 1;
-    }
-
-    .heart:before,
-    .heart:after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: red;
-      border-radius: 50%;
-    }
-
-    .heart:before {
-      top: -10px;
-      left: 0;
-    }
-
-    .heart:after {
-      left: -10px;
-      top: 0;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0) rotate(45deg);
-        opacity: 1;
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+        background-size: 400% 400%;
+        animation: gradientBG 10s ease infinite;
+        position: relative;
+        color: white;
       }
-      100% {
-        transform: translateY(-100vh) rotate(45deg);
-        opacity: 0;
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
-    }
 
-    .sparkle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.7;
-      animation: sparkleAnim 4s linear infinite;
-    }
-
-    @keyframes sparkleAnim {
-      0% {
-        transform: scale(0.5);
-        opacity: 0.5;
+      h1 {
+        font-family: "Dancing Script", cursive;
+        font-size: 4rem;
+        text-align: center;
+        text-shadow: 3px 3px 10px rgba(255, 0, 102, 0.7);
+        z-index: 2;
       }
-      50% {
-        transform: scale(1.5);
-        opacity: 1;
+
+      p {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-top: 10px;
+        z-index: 2;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
       }
-      100% {
-        transform: scale(0.5);
-        opacity: 0.5;
+
+      .heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: red;
+        transform: rotate(45deg);
+        animation: float 6s infinite ease-in-out;
+        opacity: 0.8;
+        z-index: 1;
       }
-    }
 
-    footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 0.95rem;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-      z-index: 10;
-      
-      /* Enhanced glass morphism effects with pink theme */
-      background: rgba(255, 182, 193, 0.4); /* Pink fallback for love theme */
-      background: linear-gradient(
-        135deg,
-        rgba(255, 105, 180, 0.5),
-        rgba(255, 182, 193, 0.3)
-      );
-      backdrop-filter: blur(25px) saturate(1.8);
-      -webkit-backdrop-filter: blur(25px) saturate(1.8);
-      -moz-backdrop-filter: blur(25px) saturate(1.8);
-      -ms-backdrop-filter: blur(25px) saturate(1.8);
-      border-top: 1px solid rgba(255, 255, 255, 0.4);
-      box-shadow: 
-        0 -8px 32px rgba(255, 105, 180, 0.2),
-        0 -4px 16px rgba(255, 182, 193, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-      
-      /* Enhanced visual depth */
-      overflow: hidden;
-    }
-
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(255, 182, 193, 0.2) 0%,
-        rgba(255, 105, 180, 0.1) 50%,
-        rgba(255, 192, 203, 0.15) 100%
-      );
-      z-index: -1;
-    }
-
-    footer .footer-content {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-
-    footer .made-by {
-      font-size: 0.85rem;
-      opacity: 0.9;
-      font-weight: 300;
-      letter-spacing: 0.5px;
-    }
-
-    footer a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      padding: 8px 16px;
-      border-radius: 12px;
-      background: rgba(255, 192, 203, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-    }
-
-    footer a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-      );
-      transition: left 0.6s ease;
-    }
-    
-    footer a:hover {
-      transform: translateY(-2px);
-      background: rgba(255, 182, 193, 0.4);
-      box-shadow: 
-        0 8px 25px rgba(255, 105, 180, 0.3),
-        0 4px 10px rgba(255, 182, 193, 0.2);
-      border-color: rgba(255, 255, 255, 0.4);
-    }
-
-    footer a:hover::before {
-      left: 100%;
-    }
-
-    footer a:active {
-      transform: translateY(0);
-    }
-
-    /* Subtle entrance animation for footer */
-    footer {
-      animation: footerSlideUp 1s ease-out;
-    }
-
-    @keyframes footerSlideUp {
-      0% {
-        transform: translateY(100%);
-        opacity: 0;
+      .heart:before,
+      .heart:after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: red;
+        border-radius: 50%;
       }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
 
-    /* Responsive design for footer */
-    @media (max-width: 600px) {
+      .heart:before {
+        top: -10px;
+        left: 0;
+      }
+
+      .heart:after {
+        left: -10px;
+        top: 0;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(45deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) rotate(45deg);
+          opacity: 0;
+        }
+      }
+
+      .sparkle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.7;
+        animation: sparkleAnim 4s linear infinite;
+      }
+
+      @keyframes sparkleAnim {
+        0% {
+          transform: scale(0.5);
+          opacity: 0.5;
+        }
+        50% {
+          transform: scale(1.5);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(0.5);
+          opacity: 0.5;
+        }
+      }
+
       footer {
-        width: 85%;
-        padding: 16px 20px;
-        margin-bottom: 15px;
-        font-size: 0.9rem;
-      }
-      
-      footer a {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
         font-size: 0.95rem;
-        padding: 6px 12px;
-      }
-      
-      footer .made-by {
-        font-size: 0.8rem;
-      }
-    }
+        color: white;
+        font-family: "Poppins", sans-serif;
+        z-index: 10;
 
-    /* Enhanced text visibility */
-    footer .made-by {
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
-    }
-
-    /* Fallback styling for browsers without backdrop-filter support */
-    @supports not (backdrop-filter: blur(30px)) {
-      footer {
-        background: rgba(255, 105, 180, 0.6);
-        background-image: linear-gradient(
+        /* Enhanced glass morphism effects with pink theme */
+        background: rgba(255, 182, 193, 0.4); /* Pink fallback for love theme */
+        background: linear-gradient(
           135deg,
-          rgba(255, 105, 180, 0.7) 0%,
-          rgba(255, 182, 193, 0.4) 50%,
-          rgba(255, 192, 203, 0.6) 100%
+          rgba(255, 105, 180, 0.5),
+          rgba(255, 182, 193, 0.3)
         );
-        box-shadow: 
-          0 -8px 32px rgba(255, 105, 180, 0.4),
-          0 -4px 16px rgba(255, 182, 193, 0.3),
-          inset 0 2px 4px rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(25px) saturate(1.8);
+        -webkit-backdrop-filter: blur(25px) saturate(1.8);
+        -moz-backdrop-filter: blur(25px) saturate(1.8);
+        -ms-backdrop-filter: blur(25px) saturate(1.8);
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 -8px 32px rgba(255, 105, 180, 0.2),
+          0 -4px 16px rgba(255, 182, 193, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+        /* Enhanced visual depth */
+        overflow: hidden;
       }
-      
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 182, 193, 0.2) 0%,
+          rgba(255, 105, 180, 0.1) 50%,
+          rgba(255, 192, 203, 0.15) 100%
+        );
+        z-index: -1;
+      }
+
+      footer .footer-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      footer .made-by {
+        font-size: 0.85rem;
+        opacity: 0.9;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+      }
+
       footer a {
-        background: rgba(255, 192, 203, 0.35);
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        padding: 8px 16px;
+        border-radius: 12px;
+        background: rgba(255, 192, 203, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
       }
-      
+
+      footer a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
       footer a:hover {
-        background: rgba(255, 182, 193, 0.5);
+        transform: translateY(-2px);
+        background: rgba(255, 182, 193, 0.4);
+        box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3),
+          0 4px 10px rgba(255, 182, 193, 0.2);
+        border-color: rgba(255, 255, 255, 0.4);
       }
-    }
-    
-    #music-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.2);
-      border: 1px solid white;
-      color: white;
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      z-index: 10;
-      transition: background 0.3s ease, transform 0.2s ease;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
 
-    #music-toggle:hover {
-      background: rgba(255, 255, 255, 0.4);
-    }
-    
-    #music-toggle:active {
+      footer a:hover::before {
+        left: 100%;
+      }
+
+      footer a:active {
+        transform: translateY(0);
+      }
+
+      /* Subtle entrance animation for footer */
+      footer {
+        animation: footerSlideUp 1s ease-out;
+      }
+
+      @keyframes footerSlideUp {
+        0% {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      /* Responsive design for footer */
+      @media (max-width: 600px) {
+        footer {
+          width: 85%;
+          padding: 16px 20px;
+          margin-bottom: 15px;
+          font-size: 0.9rem;
+        }
+
+        footer a {
+          font-size: 0.95rem;
+          padding: 6px 12px;
+        }
+
+        footer .made-by {
+          font-size: 0.8rem;
+        }
+      }
+
+      /* Enhanced text visibility */
+      footer .made-by {
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+      }
+
+      /* Fallback styling for browsers without backdrop-filter support */
+      @supports not (backdrop-filter: blur(30px)) {
+        footer {
+          background: rgba(255, 105, 180, 0.6);
+          background-image: linear-gradient(
+            135deg,
+            rgba(255, 105, 180, 0.7) 0%,
+            rgba(255, 182, 193, 0.4) 50%,
+            rgba(255, 192, 203, 0.6) 100%
+          );
+          box-shadow: 0 -8px 32px rgba(255, 105, 180, 0.4),
+            0 -4px 16px rgba(255, 182, 193, 0.3),
+            inset 0 2px 4px rgba(255, 255, 255, 0.3);
+        }
+
+        footer a {
+          background: rgba(255, 192, 203, 0.35);
+          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        footer a:hover {
+          background: rgba(255, 182, 193, 0.5);
+        }
+      }
+
+      #music-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid white;
+        color: white;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 10;
+        transition: background 0.3s ease, transform 0.2s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #music-toggle:hover {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      #music-toggle:active {
         transform: scale(0.9);
-    }
+      }
 
-    #music-toggle svg {
-      width: 24px;
-      height: 24px;
-      fill: white;
-      stroke: white;
-      stroke-width: 1.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
+      #music-toggle svg {
+        width: 24px;
+        height: 24px;
+        fill: white;
+        stroke: white;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
 
-    .nav-buttons {
-      position: absolute;
-      top: 80px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      z-index: 10;
-    }
-
-    .nav-btn {
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(255, 255, 255, 0.5);
-      color: white;
-      padding: 12px 20px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      text-align: center;
-      min-width: 160px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .nav-btn:hover {
-      background: rgba(255, 255, 255, 0.4);
-      transform: translateX(-5px);
-      box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
-    }
-
-    @media (max-width: 768px) {
       .nav-buttons {
-        top: 70px;
-        right: 10px;
-        gap: 10px;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 10;
       }
 
       .nav-btn {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-        min-width: 140px;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        min-width: 160px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
-    }
 
-.cursor-heart {
-      position: absolute;
-      pointer-events: none;
-
-      opacity: 10; 
-      animation: growAndFade 0.7s ease-out forwards;
-    }
-
-    .cursor-heart:before,
-    .cursor-heart:after {
-      content: '';
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      background: #c21d6f;
-      border-radius: 50%;
-      top: -6px;
-    }
-
-    .cursor-heart:after {
-      left: -6px;
-    }
-
-    @keyframes growAndFade {
-      0% {
-        transform: scale(0);
-        opacity: 1;
+      .nav-btn:hover {
+        background: rgba(255, 255, 255, 0.4);
+        transform: translateX(-5px);
+        box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
       }
-      50% {
-        transform: scale(1.2);
-        opacity: 0.6;
-      }
-      100% {
-        transform: scale(0);
-        opacity: 0;
-      }
-    }
-  </style>
-</head>
-<body>
 
-  <h1>I Love You, <span id="txt">❤️</span></h1>
-  <p>Tum ho meri har khushi ki wajah... Forever & Always</p>
-
-  <div class="nav-buttons">
-    <a href="reasons.htm" class="nav-btn">💕 Why I Love You</a>
-    <a href="memories.htm" class="nav-btn">📸 Our Memories</a>
-    <a href="index.htm" class="nav-btn">🏠 Home</a>
-  </div>
-
-  <audio id="background-music" src="music/music.mp3" loop></audio>
-  <button id="music-toggle" title="Toggle Music">
-    <span id="icon-muted">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-    </span>
-    <span id="icon-playing" style="display: none;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-    </span>
-  </button>
-
-  <footer>
-    <div class="footer-content">
-      <div class="made-by">Crafted with ❤️ by</div>
-      <a href="https://www.linkedin.com/in/deepak-kambala-89a703361/">
-        <strong>Deepak Kambala</strong>
-      </a>
-    </div>
-  </footer>
-
-  <script>
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = 2 + Math.random() * 3 + "s";
-      document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 6000);
-    }
-
-    function createSparkle() {
-      const sparkle = document.createElement("div");
-      sparkle.classList.add("sparkle");
-      sparkle.style.top = Math.random() * 100 + "vh";
-      sparkle.style.left = Math.random() * 100 + "vw";
-      sparkle.style.animationDuration = 2 + Math.random() * 3 + "s";
-      document.body.appendChild(sparkle);
-
-      setTimeout(() => {
-        sparkle.remove();
-      }, 4000);
-    }
-
-    setInterval(createHeart, 300);
-    setInterval(createSparkle, 200);
-
-// --- Mouse Heart Trail Feature ---
-    const hearts = [];
-    const trailLength = 50; 
-    let heartIndex = 0; 
-
-    for (let i = 0; i < trailLength; i++) {
-      const h = document.createElement('div');
-      h.classList.add('cursor-heart');
-      document.body.appendChild(h);
-      hearts.push(h);
-    }
-
-    document.addEventListener('mousemove', (e) => {
-      const heart = hearts[heartIndex];
-      
-      heartIndex = (heartIndex + 1) % trailLength;
-
-      heart.style.left = `${e.clientX - 6}px`; 
-      heart.style.top = `${e.clientY - 6}px`;
-      
-      heart.style.animation = 'none';
-      void heart.offsetWidth; 
-      heart.style.animation = 'growAndFade 0.7s ease-out forwards';
-    });
-
-    <!-- Accessing name variable from One webpage to another -->
-
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get("name");
-    const text = document.getElementById("txt");
-
-    if (name) {
-      text.textContent = `${name} ❤️`;
-      
-      // Update navigation links to pass name parameter
-      document.querySelectorAll('.nav-btn').forEach(btn => {
-        if (!btn.href.includes('index.htm')) {
-          const url = new URL(btn.href);
-          url.searchParams.set('name', name);
-          btn.href = url.toString();
+      @media (max-width: 768px) {
+        .nav-buttons {
+          top: 70px;
+          right: 10px;
+          gap: 10px;
         }
-      });
-    }
 
-    const music = document.getElementById("background-music");
-    const musicToggle = document.getElementById("music-toggle");
-    const iconMuted = document.getElementById("icon-muted");
-    const iconPlaying = document.getElementById("icon-playing");
-    let isPlaying = false;
-
-    musicToggle.addEventListener("click", () => {
-      if (isPlaying) {
-        music.pause();
-        iconMuted.style.display = "inline";
-        iconPlaying.style.display = "none";
-      } else {
-        music.play().catch(e => console.error("Autoplay was prevented:", e));
-        iconMuted.style.display = "none";
-        iconPlaying.style.display = "inline";
+        .nav-btn {
+          padding: 10px 15px;
+          font-size: 0.9rem;
+          min-width: 140px;
+        }
       }
-      isPlaying = !isPlaying;
-    });
 
-  </script>
+      .cursor-heart {
+        position: absolute;
+        pointer-events: none;
 
-</body>
+        opacity: 10;
+        animation: growAndFade 0.7s ease-out forwards;
+      }
+
+      .cursor-heart:before,
+      .cursor-heart:after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: #c21d6f;
+        border-radius: 50%;
+        top: -6px;
+      }
+
+      .cursor-heart:after {
+        left: -6px;
+      }
+
+      @keyframes growAndFade {
+        0% {
+          transform: scale(0);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 0.6;
+        }
+        100% {
+          transform: scale(0);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>I Love You, <span id="txt">❤️</span></h1>
+    <p>Tum ho meri har khushi ki wajah... Forever & Always</p>
+
+    <div class="nav-buttons">
+      <a href="reasons.htm" class="nav-btn">💕 Why I Love You</a>
+      <a href="memories.htm" class="nav-btn">📸 Our Memories</a>
+      <a href="index.htm" class="nav-btn">🏠 Home</a>
+    </div>
+
+    <audio id="background-music" src="music/music.mp3" loop></audio>
+    <button id="music-toggle" title="Toggle Music">
+      <span id="icon-muted">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="23" y1="9" x2="17" y2="15"></line>
+          <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+      </span>
+      <span id="icon-playing" style="display: none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path
+            d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+          ></path>
+        </svg>
+      </span>
+    </button>
+
+    <footer>
+      <div class="footer-content">
+        <div class="made-by">Crafted with ❤️ by</div>
+        <a href="https://www.linkedin.com/in/deepak-kambala-89a703361/">
+          <strong>Deepak Kambala</strong>
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = 2 + Math.random() * 3 + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 6000);
+      }
+
+      function createSparkle() {
+        const sparkle = document.createElement("div");
+        sparkle.classList.add("sparkle");
+        sparkle.style.top = Math.random() * 100 + "vh";
+        sparkle.style.left = Math.random() * 100 + "vw";
+        sparkle.style.animationDuration = 2 + Math.random() * 3 + "s";
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => {
+          sparkle.remove();
+        }, 4000);
+      }
+
+      setInterval(createHeart, 300);
+      setInterval(createSparkle, 200);
+
+      // --- Mouse Heart Trail Feature ---
+      const hearts = [];
+      const trailLength = 50;
+      let heartIndex = 0;
+
+      for (let i = 0; i < trailLength; i++) {
+        const h = document.createElement("div");
+        h.classList.add("cursor-heart");
+        document.body.appendChild(h);
+        hearts.push(h);
+      }
+
+      document.addEventListener("mousemove", (e) => {
+        const heart = hearts[heartIndex];
+
+        heartIndex = (heartIndex + 1) % trailLength;
+
+        heart.style.left = `${e.clientX - 6}px`;
+        heart.style.top = `${e.clientY - 6}px`;
+
+        heart.style.animation = "none";
+        void heart.offsetWidth;
+        heart.style.animation = "growAndFade 0.7s ease-out forwards";
+      });
+
+      <!-- Accessing name variable from One webpage to another -->
+
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get("name");
+      const text = document.getElementById("txt");
+
+      if (name) {
+        text.textContent = `${name} ❤️`;
+
+        // Update navigation links to pass name parameter
+        document.querySelectorAll(".nav-btn").forEach((btn) => {
+          if (!btn.href.includes("index.htm")) {
+            const url = new URL(btn.href);
+            url.searchParams.set("name", name);
+            btn.href = url.toString();
+          }
+        });
+      }
+
+      const music = document.getElementById("background-music");
+      const musicToggle = document.getElementById("music-toggle");
+      const iconMuted = document.getElementById("icon-muted");
+      const iconPlaying = document.getElementById("icon-playing");
+      let isPlaying = false;
+
+      musicToggle.addEventListener("click", () => {
+        if (isPlaying) {
+          music.pause();
+          iconMuted.style.display = "inline";
+          iconPlaying.style.display = "none";
+        } else {
+          music
+            .play()
+            .catch((e) => console.error("Autoplay was prevented:", e));
+          iconMuted.style.display = "none";
+          iconPlaying.style.display = "inline";
+        }
+        isPlaying = !isPlaying;
+      });
+    </script>
+  </body>
 </html>
